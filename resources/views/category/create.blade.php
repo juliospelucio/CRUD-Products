@@ -14,7 +14,7 @@
             {{ $errors->first('type') }}
         </div>
         @enderror
-        <input type="submit" value="Salvar categoria" class="btn btn-secondary mx-2">
+        <input type="submit" value="Inserir categoria" class="btn btn-secondary mx-2">
     </form>
 </div>
 @endsection

@@ -1,3 +1,6 @@
 body{
-    background-color: #efefef;
+    background-color: #efefef93;
+}
+.info-cursor{
+    cursor: help;
 }

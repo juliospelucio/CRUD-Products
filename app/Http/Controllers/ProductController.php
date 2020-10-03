@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('type', 'desc')->get();
-        return view('category.index', [
-            'categories' => $categories
+        $products = Product::all();
+        return view('product.index', [
+            'products' => $products
         ]);
     }
 
@@ -26,8 +28,12 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('category.create');
+    {   
+        $categories = Category::all();
+        return view('product.create', [
+            'categories' => $categories
+        ]);
+        return view('product.create');
     }
 
     /**
@@ -38,10 +44,30 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Category();
 
-        $category->create($request->all());
-        return redirect('/category')->with('mssg', 'Nova categoria cadastrada com sucesso');
+        // dd($request->all());
+
+        $product = new Product();
+        $messages = [
+            'name.required' => 'O campo nome não pode ser vazio',
+            'name.max' => 'Este nome já existe',
+            'name.unique' => 'Este nome já existe',
+        ];
+
+        $rules = [
+            'name' => 'required|unique:products|max:20',
+            'price' => 'required|min:1|max:999',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            return redirect('product/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $product->create($request->all());
+
+        return redirect('/product')->with('mssg', 'Novo produto cadastrado com sucesso');
     }
 
     /**
@@ -52,8 +78,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail();
-        return Category::find($id);
+        //
     }
 
     /**
@@ -64,7 +89,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        // 
+        //
     }
 
     /**
@@ -76,9 +101,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::findOrFail($id);
-        $category->update(request()->all());
-        return response()->json($category, 200);
+        //
     }
 
     /**
@@ -89,6 +112,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        return 'destroy';
+        //
     }
 }

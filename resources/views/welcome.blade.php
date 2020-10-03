@@ -32,14 +32,14 @@
         <div class="col-md mt-3">
             <div class="card shadow-sm p-3 rounded">
                 <div class="card-body text-center">
-                    <a href="/animes">Listar Produtos</a>
+                    <a href="/product">Listar Produtos</a>
                 </div>
             </div>
         </div>
         <div class="col-md mt-3">
             <div class="card shadow-sm p-3 rounded">
                 <div class="card-body text-center">
-                    <a href="/create/anime">Adicionar um novo produto</a>
+                    <a href="/product/create">Adicionar um novo produto</a>
                 </div>
             </div>
         </div>

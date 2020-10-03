@@ -15,6 +15,7 @@
 
     {{-- Links --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/functions.js') }}" defer></script>
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                         <a class="nav-link" href="/category">Categorias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/products">Produtos</a>
+                        <a class="nav-link" href="/product">Produtos</a>
                     </li>
                 </ul>
 
