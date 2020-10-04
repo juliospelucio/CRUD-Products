@@ -106,7 +106,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
         $product = Product::findOrFail($id);
         $product->update(request()->all());
         return redirect('/product')->with('mssg', 'Produto editado com sucesso');

@@ -43,8 +43,6 @@
                     @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{$category->type}}</option>
                     @endforeach
-                    <option value="1"></option>
-                    
                 </select>
             </div>
         </div>

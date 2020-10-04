@@ -27,7 +27,7 @@
             </ul>
         </div>
     </div>
-    <x-modal :id="$product->id" type="product"  :product="$product->name"/>
+    <x-modal :id="$product->id" type="product" :product="$product->name" />
 
 </div>
 @endsection

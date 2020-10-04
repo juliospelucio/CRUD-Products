@@ -39,7 +39,7 @@
         <div class="col-md mt-3">
             <div class="card shadow-sm p-3 rounded">
                 <div class="card-body text-center">
-                    <a href="/product/create">Adicionar um novo produto</a>
+                    <a href="/product/create">Cadastrar produto</a>
                 </div>
             </div>
         </div>
