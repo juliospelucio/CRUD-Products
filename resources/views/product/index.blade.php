@@ -29,12 +29,12 @@
         <div class="card-deck">
             <div class="m-1">
                 <div class="card bg-light border-dark" style="width: 18rem;">
-                    <a href="#">
+                <a href="/product/{{$product->id}}" target="_blank">
                     <img class="card-img-top" src="{{ asset('/img/img-283.svg') }}" alt="Card image cap" />
                     </a>
                     <div class="card-body">
                         <h5 class="card-title text-center">
-                            <a href="#" target="_blank">{{$product->name}}</a>
+                            <a href="/product/{{$product->id}}" target="_blank">{{$product->name}}</a>
                         </h5>
                     </div>
                 </div>

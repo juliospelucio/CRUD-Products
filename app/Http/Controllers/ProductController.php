@@ -78,7 +78,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $category = Category::findOrFail($product->category_id);
+
+        return view('product.show', ['product' => $product, 'category' => $category]);
     }
 
     /**
@@ -112,6 +115,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // dd($id);
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect('/product')->with('mssg', 'Produto excluído com sucesso');
     }
 }
