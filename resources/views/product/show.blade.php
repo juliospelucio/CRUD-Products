@@ -7,7 +7,7 @@
                 <img src="{{ asset('img/img-200.svg') }}" alt="product-name" class="img-fluid w-50">
             </div>
             <div class="d-flex justify-content-center mt-2">
-                <a href="/edit/product/{{$product->id}}" class="btn btn-outline-secondary  px-5 m-1">Edit</a>
+                <a href="{{ route('product.edit', $product->id) }}" class="btn btn-outline-secondary  px-5 m-1">Edit</a>
                 <a href="/delete/product/{{$product->id}}" class="btn btn-outline-danger  px-5 m-1" data-toggle="modal"
                     data-target="#deleteModal">Delete</a>
             </div>
@@ -28,8 +28,6 @@
         </div>
     </div>
     <x-modal :id="$product->id" type="product"  :product="$product->name"/>
-    {{-- <x-modal :id="{{$product->id}}" type="product" :category="{{$category->type}}" :name="{{$product->name}}" >
-    --}}
 
 </div>
 @endsection

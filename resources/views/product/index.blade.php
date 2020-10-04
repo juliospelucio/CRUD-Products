@@ -24,7 +24,7 @@
         </a>
     </h2>
     @endif
-    <div class="row">
+    <div class="row justify-content-md-between justify-content-sm-center">
         @foreach ($products as $product)
         <div class="card-deck">
             <div class="m-1">
