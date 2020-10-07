@@ -21,7 +21,6 @@ Este projeto utiliza [PHP](https://www.php.net/downloads.php) 7.2.5+ para funcio
 A partir da raiz do projeto, instale as dependências a inicie o servidor com o comando [Artisan](https://laravel.com/docs/8.x/artisan)
 
 ```sh
-$ cd anigame
 $ composer install
 $ php artisan serve
 ``` 
